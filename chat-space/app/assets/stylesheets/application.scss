@@ -1,0 +1,259 @@
+@import "./reset";
+
+@import "font-awesome";
+
+$rinkaku: outset 1px red; 
+$right_width: calc(100vw - 380px);
+$right_contents_width:calc(100vw - 500px);
+
+
+html body {
+  position:relative;
+  height: 100vh;
+  max-width: 100vw;
+  color: black;
+  background-color: #AAAAAA;
+      /*border: $rinkaku;*/
+
+  .header{
+    height: 24px;
+    background-color: #38aef0;
+    text-align: center;
+    color: white;
+    /*border: $rinkaku;*/
+    }
+
+  .left_content {
+    float:left;
+    background-color: #2f3e51;
+    height: calc(100vh - 24px);
+    width: 300px;
+    color: #ffffff;
+        /*border: $rinkaku;*/
+    }
+
+    .acount_info {
+      height: 114px;
+      background-color: #253141;
+      padding: 0px 20px;
+      line-height: 113px;
+      /*border: $rinkaku;*/
+      }
+
+      .acount_info p {
+        float:left;
+        max-width: 190px;
+        max-height: 50px;
+        line-height: 16px;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 48px 0 0;
+        color: #ffffff;
+        word-wrap: break-word;
+        overflow: scroll;
+        /*border: $rinkaku;*/
+        }
+  
+      .info {
+        float:right;
+        /*border: $rinkaku;*/
+        }
+  
+        .info i {
+          font-size: 16px;
+          font-weight: bold;
+          margin: 0 0 0 10px;
+          color: #ffffff;
+          /*border: $rinkaku;*/
+          }
+
+    .group_info_box{
+      padding: 0 20px;
+      height: calc(100vh - 24px - 114px);
+      word-wrap: break-word;
+      overflow: scroll;
+      /*border: $rinkaku;*/
+      }
+
+      .group_info {
+        padding: 20px 0;
+        /*border: $rinkaku;*/
+        }
+
+        .group_name {
+          font-size: 15px;
+          border-bottom: solid 5px transparent;
+          /*border: $rinkaku;*/
+          }
+
+        .group_message {
+          font-size: 11px;
+          /*border: $rinkaku;*/
+          }
+
+  .right_content {
+    float:right;
+    width: calc(100vw - 300px);
+    background-color: #eeeeee;
+    }
+
+    .group_title{
+      background-color: #ffffff;
+      padding: 0px 40px 0 40px;
+      border-bottom: solid 1px #dddddd;
+      height: 114px;
+      width:$right_width;
+        /*border: $rinkaku;*/
+      }
+  
+      .group_title ul{
+        float:left;
+        margin: 35px 0 0 0;
+        max-height: 32px;
+        width: $right_contents_width;
+        font-size: 20px;
+        word-wrap: normal;
+        overflow: scroll;
+        /*border: $rinkaku;*/
+      }
+  
+      .group_title p{
+        float:left;
+        font-size: 12px;
+        margin: 15px 0 15px 0;
+        color: #999999;
+        width: $right_contents_width;
+        word-wrap: normal;
+        overflow: scroll;
+        /*border: $rinkaku;*/
+      }
+
+      .edit_bottun{
+        float:right;
+        height: 40px;
+        background-color: #38aef0;
+        font-size: 16px;
+        color: white;
+        line-height: 40px;
+        text-align: center;
+        margin: 28px 0;
+        padding: 0px 20px;
+            /*border: $rinkaku;*/
+      }
+
+    .message_box_area{
+      padding: 8px 0 100px;
+      height: calc(100vh - 114px - 24px - 115px);
+      width: 100%;
+      word-wrap: break-word;
+      overflow: scroll;
+        /*border: $rinkaku;*/
+      }
+  
+      .message_box{
+        float: left;
+        width: 100%;
+        max-width: $right_width;
+        margin: 40px 40px 0 40px;
+        color: #434a54;
+              /*border: $rinkaku;*/
+        }
+    
+        .speakers_box{
+          float:left;
+          min-width: 180px;
+          max-width: $right_width;
+            /*border: $rinkaku;*/
+          }
+      
+          .speaker{
+            float:left;
+            font-size: 16px;
+            word-wrap: break-word;
+            max-width: 100%;
+            font-weight: bold;
+            margin: 0 10px 0 0;
+              /*border: $rinkaku;*/
+            }
+        
+          .when_speaking{
+            float: left;
+            min-width: 140px;
+            max-width: $right_width;
+            line-height: 200%;
+            font-size: 12px;
+            color: #999999;
+              /*border: $rinkaku;*/
+            }
+        
+        .message{
+          float: left;
+          font-size: 14px;
+          word-wrap: break-word;
+          min-width: 100%;
+          max-width: $right_width;
+            /*border: $rinkaku;*/
+          }
+  
+    .bottom_content{
+      position: fixed;
+      bottom: 0%;
+      min-height: 90px;
+      width:100%;
+      max-width: $right_width;
+      background-color: #dddddd;
+      padding: 0px 40px;
+      border-top: solid 1px #cccccc;
+      /*border: $rinkaku;*/
+      }
+  
+      .comment_form{
+        float: left;
+        min-height: 50px;
+        height: 100%;
+        width: $right_contents_width;
+        margin: 20px 15px 20px 0px;
+        padding: 0px 10px 0px 10px;
+        background-color: #ffffff;
+        /*border: $rinkaku;*/
+        }
+
+        .comment_box{
+          float:left;
+          font-size: 16px;
+          max-height: 100px;
+          width: calc(100vw - 550px);
+          padding: 13px 10px;
+          color: #434a54;
+          word-wrap: break-word;
+          overflow: scroll; 
+          /*border: $rinkaku;*/
+          }
+
+        .comment_form i{
+          float:right;
+          font-size: 20px;
+          margin: 15px 0px;
+              /*border: $rinkaku;*/
+          }
+
+      .send_bottun{
+        float:right;
+        height: 50px;
+        background-color: #38aef0;
+        font-size: 16px;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+        margin: 20px 0;
+        padding: 0px 20px;
+            /*border: $rinkaku;*/
+        }
+
+  .clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+    }
+
+  }
