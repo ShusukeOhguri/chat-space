@@ -12,6 +12,7 @@ module ChatSpace
       g.javascripts false
       g.helper false
       g.test_framework false
+      g.stylesheets false
     end
   end
 end
