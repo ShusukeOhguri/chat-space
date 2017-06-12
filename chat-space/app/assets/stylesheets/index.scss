@@ -4,89 +4,86 @@ html body {
   max-width: 100vw;
   color: black;
   background-color: #AAAAAA;
-      /*border: $rinkaku;*/
   }
 
 .header{
   height: 24px;
-  background-color: #38aef0;
+  background-color: $blue1;
   text-align: center;
   color: white;
-  /*border: $rinkaku;*/
   }
+
 .left_content {
   float:left;
   background-color: #2f3e51;
   height: calc(100vh - 24px);
   width: 300px;
-  color: #ffffff;
-      /*border: $rinkaku;*/
+  color: $white1;
   }
+
   .acount_info {
-    height: 114px;
+    height: $upper_contents_height;
     background-color: #253141;
-    padding: 0px 20px;
-    line-height: 113px;
-    /*border: $rinkaku;*/
+    padding: $side_20px;
+    line-height: $upper_contents_height;
     }
+
     .acount_info p {
       float:left;
       max-width: 190px;
-      max-height: 50px;
-      line-height: 16px;
-      font-size: 16px;
+      max-height: $size3;
+      line-height: $standerd_font_size;
+      font-size: $standerd_font_size;
       font-weight: bold;
       margin: 48px 0 0;
-      color: #ffffff;
+      color: $white1;
       word-wrap: break-word;
       overflow: scroll;
-      /*border: $rinkaku;*/
       }
 
     .info {
       float:right;
-      /*border: $rinkaku;*/
       }
 
       .info i {
-        font-size: 16px;
+        font-size: $standerd_font_size;
         font-weight: bold;
         margin: 0 0 0 10px;
-        color: #ffffff;
-        /*border: $rinkaku;*/
+        color: $white1;
         }
+
   .group_info_box{
-    padding: 0 20px;
+    padding: $side_20px;
     height: calc(100vh - 24px - 114px);
     word-wrap: break-word;
     overflow: scroll;
-    /*border: $rinkaku;*/
     }
+
     .group_info {
-      padding: 20px 0;
-      /*border: $rinkaku;*/
+      padding: $jouge_20px;
       }
+
       .group_name {
-        font-size: 15px;
+        font-size: $size4;
         border-bottom: solid 5px transparent;
-        /*border: $rinkaku;*/
         }
+
       .group_message {
         font-size: 11px;
-        /*border: $rinkaku;*/
         }
+
 .right_content {
   float:right;
   width: calc(100vw - 300px);
   background-color: #eeeeee;
   }
+
   .group_title{
-    background-color: #ffffff;
-    padding: 0px 40px 0 40px;
-    border-bottom: solid 1px #dddddd;
-    height: 114px;
+    background-color: $white1;
+    padding:$side_40px;
+    border-bottom: solid 1px $grey1;
+    height: $upper_contents_height;
     width:$right_width;
-      /*border: $rinkaku;*/
     }
 
     .group_title ul{
@@ -94,41 +91,39 @@ html body {
       margin: 35px 0 0 0;
       max-height: 32px;
       width: $right_contents_width;
-      font-size: 20px;
+      font-size: $size2;
       word-wrap: normal;
       overflow: scroll;
-      /*border: $rinkaku;*/
     }
 
     .group_title p{
       float:left;
       font-size: 12px;
-      margin: 15px 0 15px 0;
-      color: #999999;
+      margin:$jouge_15px;
+      color: $grey3;
       width: $right_contents_width;
       word-wrap: normal;
       overflow: scroll;
-      /*border: $rinkaku;*/
     }
+
     .edit_bottun{
       float:right;
-      height: 40px;
-      background-color: #38aef0;
-      font-size: 16px;
+      height: $size1;
+      background-color: $blue1;
+      font-size: $standerd_font_size;
       color: white;
-      line-height: 40px;
+      line-height: $size1;
       text-align: center;
       margin: 28px 0;
       padding: 0px 20px;
-          /*border: $rinkaku;*/
     }
+
   .message_box_area{
-    padding: 8px 0 100px;
+    padding: 8px 0 $comment_box_height;
     height: calc(100vh - 114px - 24px - 115px);
     width: 100%;
     word-wrap: break-word;
     overflow: scroll;
-      /*border: $rinkaku;*/
     }
 
     .message_box{
@@ -136,44 +131,39 @@ html body {
       width: 100%;
       max-width: $right_width;
       margin: 40px 40px 0 40px;
-      color: #434a54;
-            /*border: $rinkaku;*/
+      color: $grey2;
       }
-  
+
       .speakers_box{
         float:left;
         min-width: 180px;
         max-width: $right_width;
-          /*border: $rinkaku;*/
         }
-    
+
         .speaker{
           float:left;
-          font-size: 16px;
+          font-size: $standerd_font_size;
           word-wrap: break-word;
           max-width: 100%;
           font-weight: bold;
           margin: 0 10px 0 0;
-            /*border: $rinkaku;*/
           }
-      
+
         .when_speaking{
           float: left;
           min-width: 140px;
           max-width: $right_width;
           line-height: 200%;
           font-size: 12px;
-          color: #999999;
-            /*border: $rinkaku;*/
+          color: $grey3;
           }
-      
+
       .message{
         float: left;
         font-size: 14px;
         word-wrap: break-word;
         min-width: 100%;
         max-width: $right_width;
-          /*border: $rinkaku;*/
         }
 
   .bottom_content{
@@ -182,51 +172,49 @@ html body {
     min-height: 90px;
     width:100%;
     max-width: $right_width;
-    background-color: #dddddd;
-    padding: 0px 40px;
+    background-color: $grey1;
+    padding:$side_40px;
     border-top: solid 1px #cccccc;
-    /*border: $rinkaku;*/
     }
 
     .comment_form{
       float: left;
-      min-height: 50px;
+      min-height: $size3;
       height: 100%;
       width: $right_contents_width;
-      margin: 20px 15px 20px 0px;
-      padding: 0px 10px 0px 10px;
-      background-color: #ffffff;
-      /*border: $rinkaku;*/
+      margin: 20px 15px 20px 0;
+      padding: 0 10px;
+      background-color: $white1;
       }
       .comment_box{
         float:left;
-        font-size: 16px;
-        max-height: 100px;
+        font-size: $standerd_font_size;
+        max-height: $comment_box_height;
         width: calc(100vw - 550px);
         padding: 13px 10px;
-        color: #434a54;
+        color: $grey2;
         word-wrap: break-word;
         overflow: scroll; 
-        /*border: $rinkaku;*/
         }
+
       .comment_form i{
         float:right;
-        font-size: 20px;
-        margin: 15px 0px;
-            /*border: $rinkaku;*/
+        font-size: $size2;
+        margin:$jouge_15px;
         }
+
     .send_bottun{
       float:right;
-      height: 50px;
-      background-color: #38aef0;
-      font-size: 16px;
+      height: $size3;
+      background-color: $blue1;
+      font-size: $standerd_font_size;
       color: white;
-      line-height: 50px;
+      line-height: $size3;
       text-align: center;
-      margin: 20px 0;
-      padding: 0px 20px;
-          /*border: $rinkaku;*/
+      margin: $jouge_20px;
+      padding: $side_20px;
       }
+
 .clearfix:after {
   content: "";
   clear: both;
