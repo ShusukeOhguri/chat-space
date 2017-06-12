@@ -3,7 +3,7 @@ html body {
   height: 100vh;
   max-width: 100vw;
   color: black;
-  background-color: #AAAAAA;
+  background-color: $grey4;
   }
 
 .header{
@@ -15,7 +15,7 @@ html body {
 
 .left_content {
   float:left;
-  background-color: #2f3e51;
+  background-color: $dark_blue1;
   height: calc(100vh - 24px);
   width: 300px;
   color: $white1;
@@ -23,7 +23,7 @@ html body {
 
   .acount_info {
     height: $upper_contents_height;
-    background-color: #253141;
+    background-color: $dark_blue2;
     padding: $side_20px;
     line-height: $upper_contents_height;
     }
@@ -75,7 +75,7 @@ html body {
 .right_content {
   float:right;
   width: calc(100vw - 300px);
-  background-color: #eeeeee;
+  background-color: $grey6;
   }
 
   .group_title{
@@ -174,7 +174,7 @@ html body {
     max-width: $right_width;
     background-color: $grey1;
     padding:$side_40px;
-    border-top: solid 1px #cccccc;
+    border-top: solid 1px $grey5;
     }
 
     .comment_form{

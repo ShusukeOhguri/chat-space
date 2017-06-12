@@ -3,8 +3,8 @@
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: $white1;
+    border: 1px solid $grey1;
     border-radius: 5px;
 
     .account-page__inner--left, .account-page__inner--right {
@@ -30,7 +30,7 @@
         display: block;
         width: 60px;
         margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
+        border-bottom: 1px solid $blue1;
       }
     }
 
@@ -42,8 +42,8 @@
 
     .btn {
       margin-top: 20px;
-      color: #fff;
-      background-color: #ccc;
+      color: $white1;
+      background-color: $grey5;
       font-size: 14px;
     }
   }
@@ -52,7 +52,7 @@
     margin-bottom: 10px;
 
     .field-label {
-      padding: 10px 0;
+      padding: $jouge_10px;
       letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
@@ -74,7 +74,7 @@
   .btn {
     display: inline-block;
     height: 50px;
-    padding: 0 30px;
+    padding: $side_30px;
     line-height: 50px;
     letter-spacing: 1px;
     text-align: center;
@@ -85,14 +85,14 @@
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: #fff;
-    background-color: #38aef0;
+    color: $white1;
+    background-color: $blue1;
   }
 
   .field-label {
     .field_with_errors {
       display: inline-block;
-      color: #d65f4c;
+      color: $red1;
       font-weight: 400;
     }
   }
@@ -109,21 +109,21 @@
         right: 0;
         bottom: 0;
         width: 5px;
-        background-color: #d65f4c;
+        background-color: $red1;
       }
     }
   }
 }
 
 #error_explanation {
-  margin: 20px 0;
+  margin: $jouge_20px;
   padding: 20px 30px;
-  border: 1px solid #ddd;
+  border: 1px solid $grey1;
   border-radius: 2px;
 
   h2 {
     margin-bottom: 10px;
-    color: #d65f4c;
+    color: $red1;
     font-size: 14px;
   }
 
