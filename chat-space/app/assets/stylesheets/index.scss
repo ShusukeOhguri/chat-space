@@ -52,6 +52,10 @@ html body {
         color: $white1;
         }
 
+      .info a {
+        text-decoration: none;
+        }
+
   .group_info_box{
     padding: $side_20px;
     height: calc(100vh - 24px - 114px);
