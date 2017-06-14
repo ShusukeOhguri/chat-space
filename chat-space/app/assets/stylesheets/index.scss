@@ -30,7 +30,7 @@ html body {
 
     .acount_info p {
       float:left;
-      max-width: 190px;
+      max-width: 180px;
       max-height: $size3;
       line-height: $standerd_font_size;
       font-size: $standerd_font_size;
@@ -43,17 +43,28 @@ html body {
 
     .info {
       float:right;
+      margin: $side_10px;
       }
 
       .info i {
         font-size: $standerd_font_size;
         font-weight: bold;
-        margin: 0 0 0 10px;
+        margin: 0 5px 0 5px;
         color: $white1;
         }
 
-      .info a {
+      .bottun {
+        float:right;
+        height: 50px;
+        width: 50px;
         text-decoration: none;
+        background-color: $blue1;
+        font-size: 12px;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+        margin: calc(57px - 25px) 0;
+        padding: $side_10px;
         }
 
   .group_info_box{
