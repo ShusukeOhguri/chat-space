@@ -7,11 +7,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
       if user.id == current_user.id
-        if params.require(:user)[:name].present?
-          if params.require(:user)[:email].present?
-            user.update(user_params)
-          end
-        end
+        user.update(user_params)
       end
     redirect_to controller: :messages, action: :index
   end
