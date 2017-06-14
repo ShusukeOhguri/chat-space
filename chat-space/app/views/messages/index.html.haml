@@ -4,14 +4,13 @@
 
 .left_content.clearfix
   .acount_info.clearfix
-    - if user_signed_in?
-      %p acount_name
-      = link_to destroy_user_session_path, method: :delete do
-        .bottun Sign out
-      .info
-        = link_to edit_user_path(current_user), class: 'users' do
-          %i.fa.fa-cog
-        %i.fa.fa-pencil-square-o
+    %p acount_name
+    = link_to destroy_user_session_path, method: :delete do
+      .bottun Sign out
+    .info
+      = link_to edit_user_path(current_user), class: 'users' do
+        %i.fa.fa-cog
+      %i.fa.fa-pencil-square-o
   .group_info_box
     .group_info
       .group_name
