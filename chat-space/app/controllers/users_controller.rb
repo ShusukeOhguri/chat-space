@@ -8,12 +8,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    if user.id == current_user.id
-      if user.update(user_params)
-        redirect_to user_registration_path, success: "更新に成功しました"
+    @user = User.find(params[:id])
+    if @user.id == current_user.id
+      if @user.update(user_params)
+        flash[:notice] = "更新に成功しました"
+        redirect_to root_path, notice: "更新に成功しました"
       else
-        redirect_to edit_user_path, warning: "更新に失敗しました"
+        flash[:alert] =  "更新に失敗しました"
+        render "edit"
       end
     end
   end
