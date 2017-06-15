@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  def index
-  end
 
   def edit
     @user = User.find(params[:id])
@@ -10,9 +8,9 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     if user.id == current_user.id
       if user.update(user_params)
-        redirect_to user_registration_path, success: "更新に成功しました"
+        redirect_to controller: :messages, action: :index
       else
-        redirect_to edit_user_path, warning: "更新に失敗しました"
+        redirect_to controller: :users, action: :edit
       end
     end
   end
