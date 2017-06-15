@@ -1,5 +1,9 @@
 ---
 ja:
+  view:
+    edit: "編集"
+    delete: "削除"
+    back: "戻る"
   devise:
     confirmations:
       confirmed: "アカウントが確認されました。ログインしています。"
