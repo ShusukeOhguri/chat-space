@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def index
+    redirect_to new_user_session_path
+  end
 
   def edit
     @user = User.find(params[:id])
@@ -19,5 +22,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
-
 end
