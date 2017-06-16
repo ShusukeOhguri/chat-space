@@ -1,11 +1,11 @@
     # DB設計
     
     ## users table
-    |Column |Type   |Option                     |
-    |:------|------:|:-------------------------:|
-    |name   |string |null: false, index: true   |
-    |mail   |string |null: false, unique: true  |
-    |pass   |string |null: false                |
+    |Column |Type   |Option                                 |
+    |:------|------:|:-------------------------------------:|
+    |name   |string |null: false, index: true, unique: true |
+    |mail   |string |null: false, unique: true              |
+    |pass   |string |null: false                            |
     ### Association
     ・has_many :messages
     ・has_many :groups, through: :groups_users
@@ -27,7 +27,7 @@
     |:----------|--------:|:-------------------------------------------:|
     |name       |string   |null: false , unique: true                   |
     ・has_many :users, through: :groups_users
-    ・has_many :users_groups
+    ・has_many :groups_users
 
     ## groups_users table
     |Column   |Type     |Option                                       |
