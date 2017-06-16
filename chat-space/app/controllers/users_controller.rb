@@ -1,17 +1,16 @@
 class UsersController < ApplicationController
+  def index
+  end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    user = User.find(params[:id])
-    if user.id == current_user.id
-      if user.update(user_params)
-        redirect_to controller: :messages, action: :index
-      else
-        redirect_to controller: :users, action: :edit
-      end
+    if current_user.update(user_params)
+      redirect_to root_path, notice: "更新に成功しました"
+    else
+      flash[:alert] =  "更新に失敗しました"
+      render "edit"
     end
   end
 
@@ -19,5 +18,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
-
 end
