@@ -19,11 +19,13 @@
   ### Association
   ・belongs_to :user
 
-  ## users_to_group table
+  ## group table
   |Column   |Type     |Option                                       |
   |:--------|--------:|:-------------------------------------------:|
   |group_id |integer  |index: true , null: false , foreign_key: true|
   |user_id  |integer  |index: true , null: false , foreign_key: true|
+  |name     |string   |null: false                                  |
+  |message  |string   |                                             |
   ### Association
   ・belongs_to :user
-  ・belongs_to :group
+  ・belongs_to :messages

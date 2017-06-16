@@ -1,4 +1,4 @@
 class Group < ApplicationRecord
   belongs_to :user
-  belongs_to :group
+  belongs_to :messages
 end
