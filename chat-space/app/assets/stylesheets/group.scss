@@ -2,8 +2,8 @@
   width: 980px;
   margin: 60px auto;
   padding: 40px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: $white1;
+  border: 1px solid $grey1;
   border-radius: 5px;
   box-sizing: border-box;
 
@@ -14,16 +14,16 @@
     text-align: center;
   }
 
-  .chat-group-form__errors {
-    margin: 30px 0;
+  &__errors {
+    margin: $jouge_30px;
     padding: 20px 40px;
-    border: 1px solid #ddd;
+    border: 1px solid $grey1;
     border-radius: 2px;
     text-align: center;
 
     h2 {
       margin-bottom: 10px;
-      color: #f05050;
+      color: $red2;
       font-size: 14px;
     }
 
@@ -40,7 +40,7 @@
     }
   }
 
-  .chat-group-form__field {
+  &__field {
     margin-top: 30px;
     &:after {
       content: "";
@@ -67,51 +67,51 @@
       font-weight: bold;
       text-align: right;
     }
-
-    .chat-group-form__input {
-      float: left;
-      width: 100%;
-      line-height: 30px;
-      padding: 10px 15px;
-      box-sizing: border-box;
-    }
   }
 
   .chat-group-user {
-    padding: 0 15px;
+    padding: $side_15px;
     line-height: 50px;
     font-size: 14px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $grey1;
     &:after {
       content: "";
       clear: both;
       display: block;
     }
 
-    .chat-group-user__name {
+    &__name {
       float: left;
     }
 
-    .chat-group-user__btn {
+    &__btn {
       float: right;
       display: inline-block;
       cursor: pointer;
 
-      &.chat-group-user__btn--add {
-        color: #38aef0;
+      &--add {
+        color: $blue1;
       }
 
-      &.chat-group-user__btn--remove {
-        color: #f05050;
+      &--remove {
+        color: $red2;
       }
     }
   }
 
-  .chat-group-form__action-btn {
+  input[type='text']{
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+
+  input[type='submit'] {
     display: inline-block;
     padding: 12px 20px;
-    color: #fff;
-    background-color: #38aef0;
+    color: $white1;
+    background-color: $blue1;
     border: 0;
   }
 }
