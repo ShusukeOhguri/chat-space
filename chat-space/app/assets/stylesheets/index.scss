@@ -16,7 +16,7 @@ html body {
 .left_content {
   float:left;
   background-color: $dark_blue1;
-  height: calc(100vh - 24px);
+  height: 100vh;
   width: 300px;
   color: $white1;
   }
@@ -46,9 +46,10 @@ html body {
       margin: $side_10px;
       }
 
-      .info i {
+      .info a {
         font-size: $standerd_font_size;
         font-weight: bold;
+        text-decoration: none;
         margin: 0 5px 0 5px;
         color: $white1;
         }
