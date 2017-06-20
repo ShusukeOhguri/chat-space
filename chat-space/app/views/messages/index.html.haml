@@ -1,7 +1,8 @@
 
 .left_content.clearfix
   .acount_info.clearfix
-    %p acount_name
+    %p 
+      = current_user.name
     = link_to destroy_user_session_path, method: :delete do
       .bottun Sign out
     .info
@@ -10,53 +11,14 @@
       = link_to edit_user_path(current_user)do
         %i.fa.fa-cog
   .group_info_box
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_message
+    - @group_info.each do |group_info|
+      .group_info
+        .group_name
+          = group_info[:name]
+        .group_message
+          group_message
 
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_message
 
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_messagegroup_message
-
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_message
-  
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_message
-  
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_message
-  
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_message
-  
-    .group_info
-      .group_name
-        group_name
-      .group_message
-        group_message
 
 
 .right_content.clearfix
