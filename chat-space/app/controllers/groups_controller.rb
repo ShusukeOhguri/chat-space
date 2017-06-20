@@ -8,7 +8,6 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(create_params)
-    binding.pry
     if @group.save
       redirect_to root_path, notice: "グループの情報の作成に成功しました"
     else
