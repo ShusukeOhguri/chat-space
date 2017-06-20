@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :edit, only: :update
+
   def index
   end
 
@@ -21,7 +23,6 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(create_params)
       redirect_to root_path, notice: "グループの情報の更新に成功しました"
     else
