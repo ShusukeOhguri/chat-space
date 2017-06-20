@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    if @group.update(update_params)
+    if @group.update(create_params)
       redirect_to root_path, notice: "グループの情報の更新に成功しました"
     else
       flash[:alert] =  "グループ情報の更新に失敗しました"
@@ -33,9 +33,5 @@ class GroupsController < ApplicationController
   private
   def create_params
     params.require(:group).permit(:name, user_ids: [])
-  end
-
-  def update_params
-    params.require(:group).permit(:name)
   end
 end
