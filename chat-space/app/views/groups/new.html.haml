@@ -7,8 +7,9 @@
           %h2
             1件のエラーが発生しました。
           %ul
-            = @group.errors.full_messages.each do |message|
+            - @group.errors.full_messages.each do |message|
               %li message
+              = message
 
       .chat-group-form__field.clearfix
         .chat-group-form__field--left
