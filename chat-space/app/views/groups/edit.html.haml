@@ -8,26 +8,26 @@
         %ul
           %li エラーです
 
-    = form_for @group do |f|
-      .chat-group-form__field.clearfix
-        .chat-group-form__field--left
-          %label.chat-group-form__label
-            = f.label "グループ名"
-        .chat-group-form__field--right
-          = f.text_field :name
-
-      .chat-group-form__field.clearfix
-        .chat-group-form__field--left
-          %label.chat-group-form__label
-            = f.label "チャットメンバー"
-        .chat-group-form__field--right
-          = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-            = b.label { b.check_box + b.text }
-
-      .chat-group-form__field.clearfix
-        .chat-group-form__field--left
-        .chat-group-form__field--right
-          = f.submit "Save"
+    = form_for @group do |f|  
+      .chat-group-form__field.clearfix  
+        .chat-group-form__field--left 
+          %label.chat-group-form__label 
+            = f.label "グループ名" 
+        .chat-group-form__field--right  
+          = f.text_field :name  
+  
+      .chat-group-form__field.clearfix  
+        .chat-group-form__field--left 
+          %label.chat-group-form__label 
+            = f.label "チャットメンバー"  
+        .chat-group-form__field--right  
+          = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|  
+            = b.label { b.check_box + b.text }  
+  
+      .chat-group-form__field.clearfix  
+        .chat-group-form__field--left 
+        .chat-group-form__field--right  
+          = f.submit "Save" 
 
 
 
