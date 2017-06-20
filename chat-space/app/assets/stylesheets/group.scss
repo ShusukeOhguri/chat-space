@@ -2,7 +2,7 @@
   width: 980px;
   margin: 60px auto;
   padding: 40px;
-  background-color: $white1;
+  background-color: $main_white;
   border: 1px solid $grey1;
   border-radius: 5px;
   box-sizing: border-box;
@@ -90,7 +90,7 @@
       cursor: pointer;
 
       &--add {
-        color: $blue1;
+        color: $light_blue;
       }
 
       &--remove {
@@ -110,8 +110,8 @@
   input[type='submit'] {
     display: inline-block;
     padding: 12px 20px;
-    color: $white1;
-    background-color: $blue1;
+    color: $main_white;
+    background-color: $light_blue;
     border: 0;
   }
 }
