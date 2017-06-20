@@ -5,7 +5,7 @@
     = link_to destroy_user_session_path, method: :delete do
       .bottun Sign out
     .info
-      = link_to edit_group_path(current_user)do
+      = link_to new_group_path(current_user)do
         %i.fa.fa-pencil-square-o
       = link_to edit_user_path(current_user)do
         %i.fa.fa-cog
@@ -62,7 +62,8 @@
 .right_content.clearfix
   .group_title.clearfix
     %ul group_title
-    .edit_bottun Edit
+    = link_to edit_group_path(current_user)do
+      .edit_bottun Edit
     %p member_name
   .message_box_area.clearfix
     .message_box.clearfix

@@ -3,7 +3,7 @@
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: $white1;
+    background-color: $main_white;
     border: 1px solid $grey1;
     border-radius: 5px;
 
@@ -30,7 +30,7 @@
         display: block;
         width: 60px;
         margin-top: 5px;
-        border-bottom: 1px solid $blue1;
+        border-bottom: 1px solid $light_blue;
       }
     }
 
@@ -42,7 +42,7 @@
 
     .btn {
       margin-top: 20px;
-      color: $white1;
+      color: $main_white;
       background-color: $grey5;
       font-size: 14px;
     }
@@ -85,8 +85,8 @@
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: $white1;
-    background-color: $blue1;
+    color: $main_white;
+    background-color: $light_blue;
   }
 
   .field-label {
