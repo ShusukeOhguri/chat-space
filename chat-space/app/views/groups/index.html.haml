@@ -11,10 +11,10 @@
       = link_to edit_user_path(current_user)do
         %i.fa.fa-cog
   .group_info_box
-    - @groups.each do |group_name|
+    - @groups.each do |group|
       .group_info
         .group_name
-          = group_name[:name]
+          = group.name
         .group_message
           group_message
 
