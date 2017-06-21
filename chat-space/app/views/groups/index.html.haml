@@ -11,7 +11,7 @@
       = link_to edit_user_path(current_user)do
         %i.fa.fa-cog
   .group_info_box
-    - @group_info.each do |group_info|
+    - @groups.each do |group_info|
       .group_info
         .group_name
           = group_info[:name]

@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :get_group, only: [:edit, :update]
 
   def index
-    @group_info = current_user.groups
+    @groups = current_user.groups
   end
 
   def new
