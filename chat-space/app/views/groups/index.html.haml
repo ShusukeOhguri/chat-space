@@ -6,27 +6,30 @@
     = link_to destroy_user_session_path, method: :delete do
       .bottun Sign out
     .info
-      = link_to new_group_path(current_user)do
+      = link_to new_group_path(current_user) do
         %i.fa.fa-pencil-square-o
-      = link_to edit_user_path(current_user)do
+      = link_to edit_user_path(current_user) do
         %i.fa.fa-cog
   .group_info_box
     - @groups.each do |group|
-      .group_info
-        .group_name
-          = group.name
-        .group_message
-          group_message
-
-
-
+      = link_to group_path(group.id) do
+        .group_info
+          .group_name
+            = group.name
+          .group_message
+            group_message
 
 .right_content.clearfix
   .group_title.clearfix
-    %ul group_title
-    = link_to edit_group_path(current_user)do
-      .edit_bottun Edit
-    %p member_name
+    - if @group_name.present?
+      %ul
+        = @group_name.name
+      = link_to edit_group_path(@group_name.id)do
+        .edit_bottun Edit
+    %p 
+      - if @group_members.present?
+        - @group_members.each do |member|
+          = member[:name]
   .message_box_area.clearfix
     .message_box.clearfix
       .speakers_box
