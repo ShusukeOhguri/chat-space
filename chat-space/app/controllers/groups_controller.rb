@@ -21,13 +21,6 @@ class GroupsController < ApplicationController
   def edit
   end
 
-  def show
-    @groups = current_user.groups
-    @group_name = Group.find(params[:id])
-    @group_members = Group.find(params[:id]).users
-    render "index"
-  end
-
   def update
     if @group.update(create_params)
       redirect_to root_path, notice: "グループの情報の更新に成功しました"
