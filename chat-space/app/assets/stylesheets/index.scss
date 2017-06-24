@@ -6,6 +6,7 @@ html body {
   background-color: $main_white;
   }
 
+
 .header{
   height: 24px;
   background-color: $light_blue;
@@ -46,7 +47,7 @@ html body {
       margin: $side_10px;
       }
 
-      .info a {
+      .info .fa{
         font-size: $standerd_font_size;
         font-weight: bold;
         text-decoration: none;
@@ -75,18 +76,24 @@ html body {
     overflow: scroll;
     }
 
-    .group_info {
-      padding: $jouge_20px;
+    .group_info_box a{
+      text-decoration: none;
       }
 
-      .group_name {
-        font-size: $size4;
-        border-bottom: solid 5px transparent;
+      .group_info {
+        padding: $jouge_20px;
         }
-
-      .group_message {
-        font-size: 11px;
-        }
+  
+        .group_name {
+          color: $main_white;
+          font-size: $size4;
+          border-bottom: solid 5px transparent;
+          }
+  
+        .group_message {
+          color: $main_white;
+          font-size: 11px;
+          }
 
 .right_content {
   float:right;
@@ -124,19 +131,19 @@ html body {
 
     .edit_bottun{
       float:right;
-      height: $size1;
+      height: $size3;
       background-color: $light_blue;
       font-size: $standerd_font_size;
       color: white;
-      line-height: $size1;
+      line-height: $size3;
       text-align: center;
-      margin: 28px 0;
+      margin: 32px 0;
       padding: 0px 20px;
     }
 
   .message_box_area{
     padding: 8px 0 $comment_box_height;
-    height: calc(100vh - 114px - 24px - 115px);
+    height: calc(100vh - 223px);
     width: 100%;
     word-wrap: break-word;
     overflow: scroll;
@@ -180,6 +187,8 @@ html body {
         word-wrap: break-word;
         min-width: 100%;
         max-width: $right_width;
+        word-wrap: normal;
+        overflow: scroll;
         }
 
   .bottom_content{
@@ -188,6 +197,7 @@ html body {
     min-height: 90px;
     width:100%;
     max-width: $right_width;
+    min-width: 300px;
     background-color: $grey1;
     padding:$side_40px;
     border-top: solid 1px $grey5;
@@ -195,25 +205,29 @@ html body {
 
     .comment_form{
       float: left;
-      min-height: $size3;
+      height: $size3;
       height: 100%;
       width: $right_contents_width;
+      min-width: 180px;
       margin: 20px 15px 20px 0;
       padding: 0 10px;
       background-color: $main_white;
       }
-      .comment_box{
+
+      input#message_text{
         float:left;
         font-size: $standerd_font_size;
         max-height: $comment_box_height;
+        border: 0;
         width: calc(100vw - 550px);
-        padding: 13px 10px;
+        padding: 10px 10px;
         color: $grey2;
         word-wrap: break-word;
-        overflow: scroll; 
+        overflow-x: scroll; 
         }
 
-      .comment_form i{
+      .image_icon{
+        display: block;
         float:right;
         font-size: $size2;
         margin:$jouge_15px;
@@ -227,7 +241,7 @@ html body {
       color: white;
       line-height: $size3;
       text-align: center;
-      margin: $jouge_20px;
+      margin: $jouge_25px;
       padding: $side_20px;
       }
 
