@@ -3,9 +3,9 @@ class MessagesController < ApplicationController
 
   def index
     @groups = current_user.groups
-    @group_members = @group_info.users
-    @group_messages = @group_info.messages
-    @message = current_user.messages.new(group_id: @group_info.id)
+    @group_members = @group.users
+    @group_messages = @group.messages
+    @message = current_user.messages.new(group_id: @group.id)
   end
 
   def create
@@ -25,10 +25,10 @@ class MessagesController < ApplicationController
 
    private
     def create_params
-      params.require(:message).permit(:text, :image).merge(group_id: @group_info.id)
+      params.require(:message).permit(:text, :image).merge(group_id: @group.id)
     end
 
     def get_group_info
-      @group_info = Group.find(params[:group_id])
+      @group = Group.find(params[:group_id])
     end
 end
