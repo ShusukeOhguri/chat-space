@@ -1,0 +1,59 @@
+
+.left_content.clearfix
+  .acount_info.clearfix
+    %p 
+      = current_user.name
+    = link_to destroy_user_session_path, method: :delete do
+      .bottun Sign out
+    .info
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o
+      = link_to edit_user_path(current_user) do
+        %i.fa.fa-cog
+  .group_info_box
+    - @groups.each do |group|
+      .group_info
+        = link_to group_messages_path(group.id) do
+          .group_name
+            = group.name
+          - if group.messages.present?
+            - group.messages.order(id: "desc").first(1).each do |message|
+              .group_message
+                = message.text
+
+.right_content.clearfix
+  .group_title.clearfix
+    - if @group.present?
+      %ul
+        = @group.name
+      = link_to edit_group_path(@group.id)do
+        .edit_bottun Edit
+    %p 
+      - if @group_members.present?
+        - @group_members.each do |member|
+          = member.name
+  .message_box_area.clearfix
+    - if @group_messages.present?
+      - @group_messages.each do |message|
+        .message_box.clearfix
+          .speakers_box
+            .speaker
+              = User.find(message.user_id).name
+            .when_speaking
+              = message.created_at
+          - if message.text.present?
+            .message
+              = message.text
+          - if message.image.present?
+            .message
+              = image_tag message.image
+
+  - if @group.present?
+    = form_for @message, url:"/groups/#{@group.id}/messages" do |f|
+      .bottom_content
+        .comment_form
+          = f.text_field :text, placeholder: 'メッセージを入力してください'
+          .image_icon
+            %label.fa.fa-picture-o
+              = f.file_field :image, accept: "image/jpeg", style: "display: none;"
+        = f.submit "Send", class: 'send_bottun'

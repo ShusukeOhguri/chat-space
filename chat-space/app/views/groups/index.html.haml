@@ -6,64 +6,17 @@
     = link_to destroy_user_session_path, method: :delete do
       .bottun Sign out
     .info
-      = link_to new_group_path(current_user)do
+      = link_to new_group_path(current_user) do
         %i.fa.fa-pencil-square-o
-      = link_to edit_user_path(current_user)do
+      = link_to edit_user_path(current_user) do
         %i.fa.fa-cog
   .group_info_box
     - @groups.each do |group|
       .group_info
-        .group_name
-          = group.name
-        .group_message
-          group_message
-
-
-
-
-.right_content.clearfix
-  .group_title.clearfix
-    %ul group_title
-    = link_to edit_group_path(current_user)do
-      .edit_bottun Edit
-    %p member_name
-  .message_box_area.clearfix
-    .message_box.clearfix
-      .speakers_box
-        .speaker speaker
-        .when_speaking
-          2017/06/06 11:40:46
-      .message
-        message
-
-    .message_box.clearfix
-      .speakers_box
-        .speaker speaker
-        .when_speaking
-          2017/06/06 11:40:46
-      .message
-        messagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessage
-
-    .message_box.clearfix
-      .speakers_box
-        .speaker speaker
-        .when_speaking
-          2017/06/06 11:40:46
-      .message
-        message
-
-    .message_box.clearfix
-      .speakers_box
-        .speaker speaker
-        .when_speaking
-          2017/06/06 11:40:46
-      .message
-        message
-
-  .bottom_content
-    .comment_form
-      .comment_box
-        comment
-      %i.fa.fa-picture-o
-    .send_bottun Send
-
+        = link_to group_messages_path(group.id) do
+          .group_name
+            = group.name
+          - if group.messages.present?
+            - group.messages.each do |message|
+              .group_message
+                = message.text
