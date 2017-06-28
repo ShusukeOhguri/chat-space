@@ -6,7 +6,7 @@ class Group < ApplicationRecord
  
   def add_error_sample
     if name.blank?
-      errors[:base] << "グループ名は必ず入力して下さい"
+      errors[:name] << "グループ名は必ず入力して下さい"
     end
   end
 end
