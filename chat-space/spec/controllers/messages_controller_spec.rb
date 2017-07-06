@@ -5,7 +5,8 @@ describe MessagesController, type: :controller do
 
   describe 'ログインしていない場合' do
     it "意図したビューにリダイレクトできているか" do
-      get :index, params:{group_id: Faker::Number.digit}
+      group = user.groups.first
+      get :index, params:{group_id: group.id}
       expect(response).to redirect_to new_user_session_path
     end
   end
