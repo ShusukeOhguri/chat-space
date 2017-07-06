@@ -1,10 +1,11 @@
 FactoryGirl.define do
+  pass = Faker::Internet.password(8)
   factory :user do
     id                    "1"
     name                  {Faker::Name.name}
     email                 {Faker::Internet.email}
-    password              "88888888"
-    password_confirmation "88888888"
+    password              pass
+    password_confirmation pass
 
     after(:create) do |user|
       user.groups << create(:group)
