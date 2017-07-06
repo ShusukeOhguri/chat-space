@@ -45,7 +45,7 @@ group :development, :test do
   gem 'devise'
   gem 'rails-i18n'
   gem 'carrierwave'
-  gem 'rspec-rails'
+  gem 'rspec-rails', "~> 3.5"
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker', '1.7.3'
 end
