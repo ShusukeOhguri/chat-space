@@ -19,13 +19,13 @@ describe MessagesController, type: :controller do
       group = user.groups.first
       get :index, params:{group_id: group.id}
 
-      groups_F = user.groups
-      expect(assigns(:groups)).to eq groups_F
+      fake_groups = user.groups
+      expect(assigns(:groups)).to eq fake_groups
 
-      group_members_F = groups_F.find(group.id).users
+      group_members_F = fake_groups.find(group.id).users
       expect(assigns(:group_members)).to eq group_members_F
 
-      group_messages_F = groups_F.find(group.id).messages
+      group_messages_F = fake_groups.find(group.id).messages
       expect(assigns(:group_messages)).to eq group_messages_F
 
       expect(assigns(:message)).to be_an_instance_of Message
