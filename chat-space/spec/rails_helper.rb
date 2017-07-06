@@ -1,9 +1,11 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'devise'
+require 'rspec/rails'
+require File.expand_path("spec/support/controller_macros.rb")
+
 RSpec.configure do |config|
-  #下記の記述を追加
   config.include FactoryGirl::Syntax::Methods
-
-  #省略
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include ControllerMacros, type: :controller
 end
+
