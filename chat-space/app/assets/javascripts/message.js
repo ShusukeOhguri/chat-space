@@ -51,6 +51,7 @@ $(function(){
 
       .fail(function(){
         alert('error');
+        $(".send_bottun").prop("disabled", false);
       })
     })
   })
