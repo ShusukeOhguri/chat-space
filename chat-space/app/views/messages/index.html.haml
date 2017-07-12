@@ -48,7 +48,7 @@
               = image_tag message.image
 
   - if @group.present?
-    = form_for @message, url: group_messages_path do |f|
+    = form_for [@group, @message] do |f|
       .bottom_content
         .comment_form
           = f.text_field :text, placeholder: 'メッセージを入力してください', class: 'messagebox'
