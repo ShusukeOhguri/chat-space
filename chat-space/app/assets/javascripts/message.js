@@ -44,8 +44,8 @@ $(function(){
 
       .done(function(data){
         var html = buildHTML(data);
-        $('.message_box_area').append(html)
-        $('.messagebox').val('')
+        $('.message_box_area').append(html);
+        $('.messagebox').val('');
         $(".send_bottun").prop("disabled", false);
       })
 
