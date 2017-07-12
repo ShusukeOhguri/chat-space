@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(create_params)
+    @message = @group.messages.new(create_params)
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path, notice: "メッセージの作成に成功しました" }
@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
 
    private
     def create_params
-      params.require(:message).permit(:text, :image).merge(user_id:current_user.id, group_id: @group.id)
+      params.require(:message).permit(:text, :image).merge(user_id: current_user.id)
     end
 
     def get_group_info

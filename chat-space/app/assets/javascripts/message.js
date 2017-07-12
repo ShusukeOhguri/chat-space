@@ -29,11 +29,9 @@ $(function(){
 
   $('#new_message').on('submit',function(e){
     e.preventDefault();
-    console.log(this);
     var formData = new FormData(this);
-    console.log(formData);e
     var url = window.location;
-    console.log(url);
+
 
     $.ajax({
       url: url,
@@ -45,17 +43,13 @@ $(function(){
       })
 
       .done(function(data){
-        console.log(data);
         var html = buildHTML(data);
         $('.message_box_area').append(html)
         $('.messagebox').val('')
         $(".send_bottun").prop("disabled", false);
       })
 
-      .fail(function(a,b,c){
-        console.log(a);
-        console.log(b);
-        console.log(c);
+      .fail(function(){
         alert('error');
       })
     })
