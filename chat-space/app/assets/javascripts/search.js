@@ -12,7 +12,8 @@ $(function() {
     search_list.append(html);
   }
 
-  $(".chat-group-form__input").on("keyup", function() {
+  $('.chat-group-form__input').change(function() {
+    isChange = true;
     var input = $(".chat-group-form__input").val();
 
     $.ajax({
@@ -38,7 +39,5 @@ $(function() {
     .fail(function(users) {
       alert('ユーザー検索に失敗しました');
     })
-
   })
 });
-
