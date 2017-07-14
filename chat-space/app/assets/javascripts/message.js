@@ -9,7 +9,7 @@ $(function(){
     if (message.image.url !== null){
       var image = `<span class = "message">
                     <img src ="${message.image.url}">
-                  </span>`
+                   </span>`
     } else{var image = ""}
 
     var html = `<div class = "message_box clearfix">
@@ -23,7 +23,7 @@ $(function(){
                   </div>
                     ${image}
                     ${text}
-                </div>`
+                  </div>`
     return html;
   }
 
@@ -31,7 +31,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = window.location;
-
 
     $.ajax({
       url: url,
