@@ -27,8 +27,7 @@ $(function() {
     $(".append-group-member").append(html);
   }
 
-  $('.chat-group-form__input').change(function() {
-    isChange = true;
+  $('.chat-group-form__input').keyup(function() {
     var input = $(".chat-group-form__input").val();
 
     $.ajax({
