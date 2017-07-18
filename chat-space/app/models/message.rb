@@ -4,6 +4,8 @@ class Message < ApplicationRecord
   validate :add_error_sample
   mount_uploader :image, ImageUploader
 
+  scope :search_message, -> (id){ where("group_id LIKE(?)", "%#{id}%") }
+
   def add_error_sample
     if text.blank? && image.blank?
       errors[:text] << "メッセージか画像は必ず入力して下さい"

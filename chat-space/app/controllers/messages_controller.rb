@@ -20,6 +20,23 @@ class MessagesController < ApplicationController
     end
   end
 
+  def index_update
+    @messages = []
+    now = params[:now]
+    id = params[:group_id]
+    group_messages = Message.search_message(id)
+    group_messages.each do |message|
+      # if message[:created_at].to_i > (now.to_i / 1000)
+      if message[:created_at].to_i < (now.to_i / 1000)
+        @messages << message
+      end
+    end
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   private
     def create_params
       params.require(:message).permit(:text, :image).merge(user_id: current_user.id)
