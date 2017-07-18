@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     end
   end
   resources :groups, only: [:new, :create, :edit, :show, :update] do
-    resources :messages
+    resources :messages do
+      collection do
+        get 'index_update'
+      end
+    end
   end
   root  'groups#index'
 end
