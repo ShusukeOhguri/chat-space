@@ -1,6 +1,6 @@
 .left_content.clearfix
   .acount_info.clearfix
-    %p 
+    %p
       = current_user.name
     = link_to destroy_user_session_path, method: :delete do
       .bottun Sign out
@@ -25,9 +25,9 @@
     - if @group.present?
       %ul
         = @group.name
-      = link_to edit_group_path(@group.id)do
+      = link_to edit_group_path(@group.id) do
         .edit_bottun Edit
-    %p 
+    %p
       - if @group_members.present?
         - @group_members.each do |member|
           = member.name
