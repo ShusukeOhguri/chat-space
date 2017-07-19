@@ -21,13 +21,7 @@ class MessagesController < ApplicationController
   end
 
   def index_update
-    @messages = []
-    group_messages = Message.search_message(params[:group_id])
-    group_messages.each do |message|
-      if message[:created_at].to_i > params[:update_time].to_i
-        @messages << message
-      end
-    end
+    update_message_create
     respond_to do |format|
       format.html
       format.json
@@ -41,5 +35,15 @@ class MessagesController < ApplicationController
 
     def get_group_info
       @group = Group.find(params[:group_id])
+    end
+
+    def update_message_create
+      @messages = []
+      group_messages = Message.search_message(params[:group_id])
+      group_messages.each do |message|
+        if message[:created_at].to_i > params[:update_time].to_i
+          @messages << message
+        end
+      end
     end
 end
