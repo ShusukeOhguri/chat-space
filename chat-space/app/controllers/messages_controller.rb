@@ -22,12 +22,11 @@ class MessagesController < ApplicationController
 
   def index_update
     @messages = []
-    now = params[:now]
+    update_time = params[:update_time]
     id = params[:group_id]
     group_messages = Message.search_message(id)
     group_messages.each do |message|
-      # if message[:created_at].to_i > (now.to_i / 1000)
-      if message[:created_at].to_i < (now.to_i / 1000)
+      if message[:created_at].to_i > update_time.to_i
         @messages << message
       end
     end
