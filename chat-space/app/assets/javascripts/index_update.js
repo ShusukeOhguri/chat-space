@@ -1,22 +1,10 @@
 $(function(){
   function buildHTML(message){
-    if (message.text !== ""){
-      var text = `<span class = "message">
-                    ${message.text}
-                  </span>`
-    }
-    else {
-      var text = ""
-    }
+    var text = ""
+    if (message.text !== ""){ var text = `${message.text}` }
 
-    if (message.image.url !== null){
-      var image = `<span class = "message">
-                    <img src ="${message.image.url}">
-                   </span>`
-    }
-    else {
-      var image = ""
-    }
+    var image = ""
+    if (message.image.url !== null){ var image = `<img src ="${message.image.url}">` }
 
     var html = `<div class = "message_box clearfix">
                   <div class = "speakers_box">
@@ -27,8 +15,12 @@ $(function(){
                       ${message.created_at}
                     </div>
                   </div>
-                    ${image}
-                    ${text}
+                    <span class = "message">
+                      ${image}
+                    </span>
+                    <span class = "message">
+                      ${text}
+                    </span>
                   </div>`
     return html;
   }
@@ -51,12 +43,9 @@ $(function(){
         var html = buildHTML(message);
       $('.message_box_area').append(html);
       })
-      console.log("自動更新成功")
     })
 
     .fail(function(){
-      console.log("自動更新失敗")
-      console.log("自動更新停止")
       clearInterval(intervalID)
     })
   }
@@ -64,11 +53,9 @@ $(function(){
   function check_URL(intervaltime){
     var url = window.location.href
     if (url.match(/messages/)){
-      console.log("自動更新します")
       update(intervaltime)
     }
     else{
-      console.log("自動更新しませんでした")
     }
   }
 

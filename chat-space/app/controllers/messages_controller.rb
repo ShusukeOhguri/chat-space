@@ -22,11 +22,9 @@ class MessagesController < ApplicationController
 
   def index_update
     @messages = []
-    update_time = params[:update_time]
-    id = params[:group_id]
-    group_messages = Message.search_message(id)
+    group_messages = Message.search_message(params[:group_id])
     group_messages.each do |message|
-      if message[:created_at].to_i > update_time.to_i
+      if message[:created_at].to_i > params[:update_time].to_i
         @messages << message
       end
     end
