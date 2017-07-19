@@ -20,6 +20,14 @@ class MessagesController < ApplicationController
     end
   end
 
+  def index_update
+    update_message_create
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   private
     def create_params
       params.require(:message).permit(:text, :image).merge(user_id: current_user.id)
@@ -27,5 +35,15 @@ class MessagesController < ApplicationController
 
     def get_group_info
       @group = Group.find(params[:group_id])
+    end
+
+    def update_message_create
+      @messages = []
+      group_messages = Message.search_message(params[:group_id])
+      group_messages.each do |message|
+        if message[:created_at].to_i > params[:update_time].to_i
+          @messages << message
+        end
+      end
     end
 end

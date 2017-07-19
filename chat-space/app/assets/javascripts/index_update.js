@@ -25,32 +25,42 @@ $(function(){
     return html;
   }
 
-  $('#new_message').on('submit',function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = window.location;
+  function update(intervaltime){
+    var URL = $('#new_message').attr('action')
+    var routes = URL + "/index_update"
+    var group_id = URL.replace("/groups/", "").replace("/messages", "")
+    var acquisition_start_time = (new Date().getTime() / 1000) - intervaltime
 
     $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
+      url: routes,
+      type: "GET",
+      data: {update_time: acquisition_start_time, group_id: group_id},
       dataType: 'json',
-      processData: false,
-      contentType: false
       })
 
-      .done(function(data){
-        var html = buildHTML(data);
-        $('.message_box_area').append(html);
-        $('.messagebox').val('');
-        $(".send_bottun").prop("disabled", false);
-      })
-
-      .fail(function(){
-        alert('error');
-        $(".send_bottun").prop("disabled", false);
+    .done(function(data){
+      $.each(data, function(index, message) {
+        var html = buildHTML(message);
+      $('.message_box_area').append(html);
       })
     })
-  })
 
+    .fail(function(){
+      clearInterval(intervalID)
+    })
+  }
+
+  function check_URL(intervaltime){
+    var url = window.location.href
+    if (url.match(/messages/)){
+      update(intervaltime)
+    }
+    else{
+    }
+  }
+
+  var intervaltime_second = 5
+  var intervalID = setInterval(function(){check_URL(intervaltime_second)}, intervaltime_second*1000)
+
+})
 
